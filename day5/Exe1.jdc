@@ -1,0 +1,18 @@
+
+
+Thing a = new Thing();
+
+a.printNumbers(6);
+
+
+class Thing {
+	void printNumbers(int n) {
+		if (n <= 0) {
+		return;
+		}
+		println(n);
+		printNumbers(n-2);
+		printNumbers(n-3);
+		println(n);
+	}
+}

@@ -1,0 +1,58 @@
+
+E2 e = new E2();
+/*
+println(e.fibo_recursive(10));
+println(e.fibo_iterative(10));
+*/
+
+println(e.solve_hanoi(64));
+
+class E2 {
+
+	int factorial_iterative(int n){
+		int res = 1;
+		for(int i=n ; i>0; i-- ){
+		
+			res = res * i;
+		}
+		return res;
+	}
+
+	int factorial_recursive(int n){
+		if (n==0){
+			return 1;
+		}
+		return n * factorial_recursive(n-1);
+	}
+	
+	int fibo_recursive(int n){
+		if (n <= 2 ){
+			return 1;
+		
+		} else {
+		
+			return fibo_recursive(n-1) + fibo_recursive(n-2);
+		}
+	}
+	
+	int fibo_iterative(int n){
+		int res = 1;
+		int previous = 0;
+		int temp;
+		for(int i=2 ; i<=n; i++ ){
+			temp = res;
+			res = res + previous;
+			previous = temp;
+		}
+		return res;
+	}
+	
+	long solve_hanoi(int discs){
+		long res = 0;
+		if(discs == 1){
+			return 1;
+		}
+		return solve_hanoi(discs -1) * 2 + 1; 
+	}
+
+}
