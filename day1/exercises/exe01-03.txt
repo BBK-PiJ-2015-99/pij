@@ -1,0 +1,15 @@
+
+/*
+Exe 1
+ the program checks if the user was older than 17 in 2012
+
+Exe 2
+	The program never finishes as i is initialised at 10 and the loop only runs while i smaller than 5
+	
+Exe 3
+	The program takes a number as input and assuming that it is smaller than 10 starts reading and printing back numbers as many times as there are numbers between the first number and 10. The program exits if the second number is 0.
+	
+	
+	
+*/
+

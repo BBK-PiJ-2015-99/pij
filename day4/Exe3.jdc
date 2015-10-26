@@ -1,0 +1,66 @@
+
+BaseConversion bc = new BaseConversion();
+bc.testPower2();
+
+class BaseConversion {
+	 int power( int base,  int exponent ) {
+		int result = 1;
+		if (exponent>0) {
+			for (int i=1; i<=exponent; i++ ){
+				result *= base;
+			}	
+		}
+		return result;
+	}
+	
+	int power2(int powerOf2) {
+		return power(2, powerOf2);
+	}
+
+	int binary2decimal(String to_decimal){
+		int decimal_num = 0;
+		println(to_decimal.length()-1);
+		int counter = 0;
+		for(int i= to_decimal.length()-1; i >=0 ; i--){
+			println(i);
+			char char_at_pos = to_decimal.charAt(i);
+			if ( char_at_pos == '1' || char_at_pos == '0'){
+				if ( char_at_pos == '1' ) {
+						decimal_num += power2(counter);						
+				}
+			counter += 1;
+			} else {				
+				println("There is a " + char_at_pos + " at pos " + i + "\n This can't be a binary number, dude.");
+			}
+		}
+		return decimal_num;
+	}
+	
+	String decimal2binary(int to_binary){
+		int result = to_binary;
+		int remainder ;
+		String output = "";
+		while(result>0){
+			remainder = result % 2;
+			result = result /2;
+			if (remainder ==0){
+				output += remainder;
+			} else {
+				output += 1;
+			}
+			
+		}
+		return output;
+	}
+	
+	void testPower2(){
+		println("Please input a number to convert to binary:");
+		int decimal_number = readInt();	
+		String binary_num = decimal2binary(decimal_number);	
+		println("The binary number is: " + binary_num);
+		
+		
+	}
+	
+}
+

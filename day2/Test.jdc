@@ -1,0 +1,3 @@
+println("please enter a number:");
+int num = readInt();
+println("You entered " + num + ".");
