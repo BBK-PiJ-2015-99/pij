@@ -1,0 +1,11 @@
+public class Runner {
+	
+	public static void main(String[] args){
+		Calculator calculator = new Calculator();
+		System.out.println(calculator.add(1,2));
+		args[1];
+		// reading
+		// String str = System.console.readLine();
+	}
+
+}
