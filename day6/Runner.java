@@ -2,6 +2,32 @@ import java.util.Arrays;
 public class Runner {
 	
 	public static void main(String[] args){
+	
+
+		
+		/*
+		#
+		# Exe2
+		#
+		
+		*/
+		Matrix matrix = new Matrix(5,5);
+		
+		matrix.setRow(4,"8,8,8,8,8");
+		matrix.setColumn(4,"8,8,8,8,8");
+		matrix.setElement(2,2,0);
+		String representation = matrix.toString();
+		System.out.println("The matrix is:");
+		System.out.println(representation);
+		System.out.println("Again but with pretty print:");
+		System.out.println(matrix.prettyPrint());
+	
+	
+
+		/*
+		#
+		# Exe2
+		#
 		
 		int[] src = {1,2,3};
 		int[] dst = {4,5,6};
@@ -26,12 +52,9 @@ public class Runner {
 		System.out.println(Arrays.toString(dst_smaller));
 		dst_smaller = ac.copyArrays(src,dst_smaller);
 		System.out.println(Arrays.toString(dst_smaller));
+		*/
 		
-		
-		
-		
-		
-		
+	
 		
 		/*
 		#
