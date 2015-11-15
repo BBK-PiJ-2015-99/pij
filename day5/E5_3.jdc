@@ -1,0 +1,43 @@
+
+
+println("Please input a sheet size (A000):");
+String input_size = readLine();
+int input_size_parsed = Integer.parseInt(input_size.substring(1));
+
+PaperSizes sheetDim = new PaperSizes(); 
+sheetDim.side1 = 1189;
+sheetDim.side2 = 1682;
+
+CalculatePaperSize calcPaperSz = new CalculatePaperSize();
+
+PaperSizes calculatedSize = calcPaperSz.get_size(input_size_parsed, sheetDim);
+println(calculatedSize.side1 + "-- " +  calculatedSize.side2);
+
+class CalculatePaperSize {
+    PaperSizes  get_size(int input_size, PaperSizes sheetDim){
+
+        if( input_size > 0 && input_size % 2 == 0){
+            sheetDim.side1/=2;
+            return get_size(input_size-1, sheetDim);
+        }else if (input_size >0 && input_size % 2 != 0) {
+            sheetDim.side2/=2;
+            return get_size(input_size-1, sheetDim);
+        } else {
+
+        return sheetDim;
+        }
+}
+}
+
+
+class PaperSizes {
+    int side1;
+    int side2;
+}
+
+
+
+
+
+
+

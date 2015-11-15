@@ -1,0 +1,33 @@
+class ReadMarks {
+
+	public void ReadAllMarks(){
+		
+		String customerInput;
+		int customerInputInt;
+		
+		int failCounter, passCounter, passDistinctions;
+		do{
+			customerInput = System.console().readLine();
+			customerInputInt = Integer.parseInt(customerInput);
+			
+			if (customerInputInt > 100 ||customerInputInt < -2 ){
+				System.out.println("Wrong marks entered");
+			}else if(customerInputInt >=70){
+				passDistinctions++;
+			}else if(customerInputInt >= 50 && customerInputInt <=69) {
+				passCounter ++;
+			} else {
+				failCounter ++;
+				}
+			
+			
+		
+		
+		} while (customerInputInt != -1)
+	}
+
+	public static void main(String[] args){
+		
+	}
+
+}
