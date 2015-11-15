@@ -46,14 +46,14 @@ public class Patient {
 		}
 		return counter;
 	}
-	public int qLength() {
-		Patient current_patient = this;
-		int result = 0;
-		if (current_patient.nextPatient == null){
+	public int recursiveLength() {
+		Patient nextPatientInstance = this.nextPatient;
+		int result = 1;
+		if (nextPatientInstance == null){
 			return 1;
 		}
 		else {
-			return result = result + this.qLength();
+			return result = result +  nextPatientInstance.recursiveLength();
 		}
 	}
 	
@@ -72,8 +72,6 @@ public class Patient {
 		}	while (current_patient.nextPatient != null) ;
 	}
 	
-	
-	
 	public static void main(String[] args) {
 		Patient base = new Patient("Base Patient",10,"TB" );
 		//System.out.println("First Print");
@@ -88,7 +86,9 @@ public class Patient {
 		
 		base.printPatients();
 			
-		int queueLength = base.qLength();
+		int queueLengthRecursive = base.recursiveLength();
+		int queueLength = base.queueLength();
+		System.out.println(queueLengthRecursive);
 		System.out.println(queueLength);
 		
 	}
