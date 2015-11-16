@@ -1,17 +1,19 @@
 class HashUtilities{
 	
-	public int shortHash(int val){
-		
-		return  ( (val - int.MIN) / (int.MAX - int.MIN) ) * (1 - 1000) + 1;
-		
+	public static int shortHash(int val){
+		return  Math.abs(val) % 1000;
 	}
 	
 	public static void main(String[] args){
-		System.out.println(this.shortHash(1));
-		System.out.println(this.shortHash(1000));
 		
-		System.out.println(this.shortHash(1000000000));
+		//HashUtilities hu = new HashUtilities();
 		
+		System.out.println("Give me a string and I will calculate its hash code");
+		String str = System.console().readLine();
+		int hash = str.hashCode();
+		int smallHash = HashUtilities.shortHash(hash);
+		System.out.println("0 < " + smallHash + " < 1000");
+
 		
 	}
 	
