@@ -3,6 +3,12 @@ public class Person {
 	private int age;
 	private Person nextPerson;
 	
+	public Person(String name, int age){
+		this.name = name;
+		this.age = age;
+		
+	}
+	
 	public String getName(){
 		return this.name;
 	}
@@ -11,7 +17,7 @@ public class Person {
 	}
 	
 	public int getAge(){
-		return this.name;
+		return this.age;
 	}
 	public void setAge(int new_age){
 		this.age = new_age;
@@ -21,9 +27,9 @@ public class Person {
 		return this.nextPerson;
 	}
 	public void setNextPerson(Person new_nextPerson){
-		this.new_nextPerson = new_nextPerson;
+		this.nextPerson = new_nextPerson;
 	}
 	
-	
+
 	
 }
