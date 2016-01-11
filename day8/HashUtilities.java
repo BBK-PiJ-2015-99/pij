@@ -1,4 +1,5 @@
-class HashUtilities{
+package pij;
+public class HashUtilities{
 	
 	public static int shortHash(int val){
 		return  Math.abs(val) % 1000;
