@@ -28,5 +28,21 @@ interface LibraryUser {
 	* @param LibraryUser ID
 	*/
 	void setID(int id);
-		
-}
+	
+	/**
+	* Register this LibraryUser with a new Library
+	*
+	* @param Library where LibraryUser is to be registered
+	*/
+	void register(Library library);
+	
+	/**
+	*
+	* Get Library where LibraryUser is registered
+	*
+	* @return Library object
+	*/
+	
+	Library getLibrary();
+
+	}
