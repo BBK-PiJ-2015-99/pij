@@ -46,10 +46,12 @@ class Cp {
                 }
                 /*Path p1 = Paths.get(file1.getAbsolutePath())
                 Path p2 = Paths.get(file1.getAbsolutePath())*/
-                try {
-                    Files.move(Paths.get(file1.getAbsolutePath()),Paths.get(file2.getAbsolutePath()), StandardCopyOption.REPLACE_EXISTING);
-                } catch(IOException e) {
-                    e.printStackTrace();
+                if(overwrite || !file2Exists){
+                    try {
+                        Files.copy(Paths.get(file1.getAbsolutePath()),Paths.get(file2.getAbsolutePath()), StandardCopyOption.REPLACE_EXISTING);
+                    } catch(IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             } else{
                 System.out.println("The first file does not exists. Please supply a valid file.");
