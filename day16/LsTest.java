@@ -8,7 +8,7 @@ public class LsTest {
 
     @BeforeClass 
     public void initTest(){
-        Ls ls = new Ls();
+        Ls ls = new Ls("lsTestData");
         files = ls.run();
     }
    
